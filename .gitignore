@@ -1,0 +1,22 @@
+# Memory data (stored in Google Drive, not Git)
+areas/
+projects/
+archive/
+inbox/
+
+# Claude Code local settings (contains permissions history and secrets)
+.claude/settings.local.json
+
+# Claude Code managed rules (symlink to local org config, machine-specific)
+.claude/rules/managed
+
+# macOS
+.DS_Store
+
+# Environment-specific extensions. Create your own CLAUDE-[ENVIRONMENT].md
+# files (e.g., CLAUDE-MYCOMPANY.md) for org-specific tools, integrations, and
+# workflows. These are gitignored to keep org details private. Only
+# CLAUDE-WORK.md is shared — it contains generic management patterns.
+.claude/CLAUDE-*.md
+!.claude/CLAUDE-WORK.md
+.claude/SETUP.md
