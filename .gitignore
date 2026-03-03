@@ -10,6 +10,9 @@ inbox/
 # Claude Code managed rules (symlink to local org config, machine-specific)
 .claude/rules/managed
 
+# Environment secrets
+.env
+
 # macOS
 .DS_Store
 
@@ -20,3 +23,4 @@ inbox/
 .claude/CLAUDE-*.md
 !.claude/CLAUDE-WORK.md
 .claude/SETUP.md
+
