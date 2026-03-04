@@ -77,6 +77,6 @@ Work-specific person file example `areas/people/sprinkles/sprinkles.md`:
 - Learning to escalate effectively with ingredient suppliers
 
 ## Recent Observations
-- 2025-02-03: Ran the weekend tasting solo for the first time, great feedback
-- 2025-01-28: Proactively flagged the vanilla bean shortage before it hit production [perf-evidence: Sprinkles]
+- 2025-02-03: Ran the weekend tasting solo for the first time, great feedback. [Waffles](../waffles/waffles.md) covered backup.
+- 2025-01-28: Proactively flagged the vanilla bean shortage before it hit production [perf-evidence: Sprinkles]. Relevant to [Flavor Launch](../../projects/flavor-launch/flavor-launch.md).
 ```

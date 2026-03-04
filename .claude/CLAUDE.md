@@ -49,7 +49,7 @@ When you're told about something that happened - a conversation, meeting, decisi
 
 **How to respond in logging mode:**
 
-1. **First, do the job** - log the interaction, extract tasks and follow-ups, confirm what you captured
+1. **First, do the job** - log the interaction, extract tasks and follow-ups, confirm what you captured. All entity mentions must be `[Name](path)` links (see Cross-Linking).
 2. **Then, offer observations** - but make them easy to dismiss:
    - Connections to active goals
    - Suggested tasks or follow-ups not explicitly stated but might be wanted
@@ -157,21 +157,21 @@ Pure index. One row per interaction. No notes or detail ever go here — all not
 `| Date | Person/Group | Type | Topics |`
 
 ### areas/followups.md
-Things OTHER people committed to.
+Things OTHER people committed to. Person column and entity mentions in Context must be `[Name](path)` links.
 `| Due Date | Person | What | Context | Related Goal | Category | Status |`
 
 ### areas/tasks.md
-General tasks (not project-specific).
+General tasks (not project-specific). For column and entity mentions in Context must be `[Name](path)` links.
 `| Due Date | Task | For | Context | Related Goal | Category | Status |`
 
 ### areas/goals.md
 Structure for priorities and goals — see file for format.
 
 ### areas/people/[person].md
-Each person gets their own directory and file with: Category, Contact/Slack/Workday, Context section, Development Focus (for direct reports), Recent Observations. See CLAUDE-WORK.md for the work-specific format.
+Each person gets their own directory and file with: Category, Contact/Slack/Workday, Context section, Development Focus (for direct reports), Recent Observations. Observations mentioning other people or projects must include `[Name](path)` links. See CLAUDE-WORK.md for the work-specific format.
 
 ### projects/[project-name].md
-Each project gets its own directory and file with: Objective, Why it matters, Background, Current situation, Key people, Tasks table (`| Due Date | Task | Owner | Status | Context |`), Next action.
+Each project gets its own directory and file with: Objective, Why it matters, Background, Current situation, Key people, Tasks table (`| Due Date | Task | Owner | Status | Context |`), Next action. Key people and all entity mentions must include `[Name](path)` links.
 
 ### archive/projects/[project-name].md
 Completed projects moved here with outcome summary added at the top.
@@ -216,12 +216,28 @@ When there are multiple nudge dates, that's a signal to escalate or change commu
 
 ---
 
+## Cross-Linking
+
+**Every file edit must use `[Name](path)` links for people and projects that have files in this system. No plain-text names. No exceptions.**
+
+If you write "Jane Smith" in a file and `areas/people/jane-smith/jane-smith.md` exists, that's wrong. It must be `[Jane Smith](path/to/jane-smith.md)`. Same for projects, goals, and any entity with a file.
+
+**Path reference:**
+
+| From | To a person | To a project |
+|------|-------------|-------------|
+| `areas/` files (tasks, followups, goals) | `[Name](people/person-name/person-name.md)` | `[Name](../projects/project-name/project-name.md)` |
+| `areas/people/[person]/` | `[Name](../other-person/other-person.md)` | `[Name](../../projects/project-name/project-name.md)` |
+| `projects/[project]/` | `[Name](../../areas/people/person-name/person-name.md)` | `[Name](../other-project/other-project.md)` |
+
+---
+
 ## Principles
 
 - **Follow PARA organization** - Projects have deadlines and end, Areas are ongoing responsibilities, Archive holds completed items, Resources are stored elsewhere
 - **Match the mode to the moment** - logging is quick, working is collaborative
 - **Preserve context** - the "why" matters for future reference (but respect minimal context for sensitive items)
-- **Connect the dots** - link interactions to goals and themes
+- **Connect the dots** - every entity mention is a `[Name](path)` link (see Cross-Linking)
 - **Push for specificity in goals** - vague goals are useless
 - **Keep files clean** - mark complete rather than delete; archive periodically
 - **When uncertain, ask** - especially about dates, priority, intent, or where something should be organized
@@ -231,3 +247,5 @@ When there are multiple nudge dates, that's a signal to escalate or change commu
 ## Extensions
 
 This system is modular for portability across LLM tools. At the start of every session, read any `CLAUDE-*.md` files in this directory and follow their instructions. These contain environment-specific behaviors (e.g., work management, company integrations) that may or may not be present depending on context.
+
+`CLAUDE-MEMORY.md` is the system's living memory — conventions, shortcuts, and active work context. Read it and update it as necessary throughout the session.
