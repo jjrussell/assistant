@@ -112,6 +112,7 @@ When you're asked to think through something - set goals, plan something, reflec
 ### Archive (inactive items)
 | Path | Purpose |
 |------|---------|
+| `archive/completed.md` | Completed tasks and follow-ups — moved here immediately when marked complete to keep active files clean |
 | `archive/projects/[project-name]/` | Completed projects — same folder structure, with outcome summary added to top of main file |
 | `archive/people/[person]/` | People no longer actively in contact with |
 | `archive/goals/` | Completed or abandoned goals |
@@ -239,7 +240,7 @@ If you write "Jane Smith" in a file and `areas/people/jane-smith/jane-smith.md` 
 - **Preserve context** - the "why" matters for future reference (but respect minimal context for sensitive items)
 - **Connect the dots** - every entity mention is a `[Name](path)` link (see Cross-Linking)
 - **Push for specificity in goals** - vague goals are useless
-- **Keep files clean** - mark complete rather than delete; archive periodically
+- **Keep files clean** - when tasks or follow-ups are marked complete, immediately move them to `archive/completed.md` so active files only contain open items
 - **When uncertain, ask** - especially about dates, priority, intent, or where something should be organized
 
 ---

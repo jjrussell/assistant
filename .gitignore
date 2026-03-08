@@ -3,6 +3,7 @@ areas/
 projects/
 archive/
 inbox/
+outbox/
 
 # Claude Code local settings (contains permissions history and secrets)
 .claude/settings.local.json
