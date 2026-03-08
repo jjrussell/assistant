@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "todoist": {
+      "url": "https://ai.todoist.net/mcp",
+      "type": "http",
+      "trust": true
+    }
+  }
+}
