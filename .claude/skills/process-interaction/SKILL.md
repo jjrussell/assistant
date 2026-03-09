@@ -1,6 +1,6 @@
 ---
 name: process-interaction
-description: Process any interaction — meeting transcripts, Slack threads, pasted Slack conversations, Google Doc links, or conversational reports. Auto-invoked when the user says "process transcripts", "process inbox", or reports an interaction ("just talked to...", "had a meeting with...", "quick update...", "FYI...").
+description: Make sure to use this skill whenever the user says "process transcripts", "process inbox", or reports any interaction (e.g., "just talked to...", "had a meeting with...", "quick update...", "FYI..."). This handles meeting transcripts, Slack threads, Google Docs, or conversational reports.
 ---
 
 ## Pre-processing: Load context
@@ -37,7 +37,7 @@ The user tells you about something that happened — "just talked to Lisa about 
 
 ### 2. Extract and file
 
-Every entity mention in every edit must be a `[Name](path)` link — no plain-text names for people or projects that have files.
+To ensure all information is properly cross-linked within the memory system and context is preserved, always format entity mentions as `[Name](path)` links. Avoid using plain-text names for people or projects that have dedicated files.
 
 - Tasks YOU committed to → `areas/tasks.md` or the relevant project file
 - Follow-ups others committed to → `areas/followups.md`
@@ -56,7 +56,7 @@ Skip this step for conversational input.
 - If a likely duplicate is found, **do not process it** — move it to `inbox/possible-duplicates/` (create the folder if it doesn't exist), keeping the original filename
 - At the end of the batch, list every file moved to `inbox/possible-duplicates/` and explicitly state which already-processed item you believe it duplicates
 - Wait for confirmation before doing anything further with those files
-- **NEVER DELETE AN INBOX FILE** — even confirmed duplicates stay in `inbox/possible-duplicates/` until you explicitly say to remove them
+- Keep all files in the inbox, including confirmed duplicates (move them to `inbox/possible-duplicates/`). We preserve these files so the user doesn't lose original records before explicit removal.
 
 ### 4. Move and rename the file (file-based input only)
 

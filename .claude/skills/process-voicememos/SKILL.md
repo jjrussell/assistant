@@ -1,6 +1,6 @@
 ---
 name: process-voicememos
-description: "Process transcribed voice memos — extract summaries, tasks, follow-ups, and prepare for review"
+description: "Make sure to use this skill whenever the user asks to process transcribed voice memos, extract summaries, tasks, or follow-ups from them. Trigger this to prepare meetings for review."
 ---
 
 # /process-voicememos - Process Transcribed Voice Memos

@@ -1,6 +1,6 @@
 ---
 name: whats-on-my-plate
-description: Show a consolidated view of tasks, follow-ups, and goals due today or this week. Use when asked "what's on my plate", "what do I need to do", "what's due today/this week", "what's coming up", or similar.
+description: Make sure to use this skill whenever the user asks "what's on my plate", "what do I need to do", "what's due today/this week", or "what's coming up". Use it to show a consolidated view of their tasks, follow-ups, and goals.
 argument-hint: "[today|this week|next week] (optional, defaults to today)"
 ---
 

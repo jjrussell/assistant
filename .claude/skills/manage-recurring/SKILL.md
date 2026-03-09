@@ -1,6 +1,6 @@
 ---
 name: manage-recurring
-description: Manage recurring items — create, update, and track items that repeat on a schedule. Auto-invoked when recurring responsibilities are discussed or need updating.
+description: Make sure to use this skill whenever the user discusses ongoing responsibilities, items that repeat on a schedule, or asks about recurring tasks, even if they don't explicitly ask to "manage recurring items". Use it to create, update, and track these items.
 ---
 
 ## Recurring Items

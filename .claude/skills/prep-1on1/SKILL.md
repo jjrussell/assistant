@@ -1,6 +1,6 @@
 ---
 name: prep-1on1
-description: Prepare for a 1:1 meeting with a person, answer "what do I know about [person]?" queries, work on development plans, or answer "what should I be thinking about with my team?". Use when asked to prep for a 1:1, asked about a person's context, or asked about team oversight.
+description: Make sure to use this skill whenever the user asks to prep for a 1:1, asks "what do I know about [person]?", works on development plans, or asks about team oversight. Trigger this skill even if they just mention an upcoming meeting with a team member.
 argument-hint: "[person name]"
 ---
 

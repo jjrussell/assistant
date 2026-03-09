@@ -1,6 +1,6 @@
 ---
 name: manage-project
-description: Create, update, or query project status. Auto-invoked when projects are discussed, created, or queried — "what's the status on [project]?", "what projects am I driving?", or when a new initiative needs tracking.
+description: Make sure to use this skill whenever the user discusses projects, wants to create a new project, or asks about project statuses (e.g., "what's the status on [project]?", "what projects am I driving?", or when a new initiative needs tracking), even if they don't explicitly ask to use the skill.
 ---
 
 ## What is a project?

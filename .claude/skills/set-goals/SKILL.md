@@ -1,6 +1,6 @@
 ---
 name: set-goals
-description: Set, review, or assess progress on goals. Auto-invoked when goals need to be established, revisited, or when asked "how are we tracking on [goal]?" or "how are we doing on our goals?"
+description: Make sure to use this skill whenever the user asks about goals, wants to set new goals, review progress, or asks "how are we tracking on [goal]?". Trigger this skill for any goal-related discussion.
 ---
 
 ## Goal Setting

@@ -1,6 +1,6 @@
 ---
 name: transcribe
-description: "Transcribe voice memos — fires off local transcription in the background using Apple Silicon GPU. No audio leaves the machine."
+description: "Make sure to use this skill whenever the user asks to \"transcribe\", \"transcribe my meetings\", or \"transcribe voice memos\". Use this skill to securely launch local transcription in the background on Apple Silicon."
 ---
 
 # /transcribe - Transcribe Voice Memos

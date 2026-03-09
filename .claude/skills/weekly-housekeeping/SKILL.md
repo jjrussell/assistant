@@ -1,6 +1,6 @@
 ---
 name: weekly-housekeeping
-description: Run weekly cleanup and archiving of stale tasks, follow-ups, interactions, and goals. Use on Fridays or when explicitly requested.
+description: Make sure to use this skill whenever the user asks for weekly housekeeping, cleanup, or on Fridays to archive stale tasks, follow-ups, interactions, and goals.
 ---
 
 ## Weekly Housekeeping

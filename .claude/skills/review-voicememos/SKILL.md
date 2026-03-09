@@ -1,6 +1,6 @@
 ---
 name: review-voicememos
-description: "Review processed voice memo meetings — confirm or edit summaries, then save to work memory"
+description: "Make sure to use this skill whenever the user asks to review voice memos or processed meetings. Use this to confirm or edit summaries and save them to work memory."
 ---
 
 # /review-voicememos - Review Processed Voice Memo Meetings
@@ -184,6 +184,6 @@ Report: "Saved X of Y meetings. Z skipped (still pending review)."
 - **One at a time**: Present meetings sequentially.
 - **Be concise**: `/process-voicememos` did the heavy lifting. This should be fast.
 - **Questions section**: Present unresolved questions before Save/Edit/Skip. Incorporate answers before saving.
-- **NEVER DELETE** working files — always move to `inbox/archive/`.
-- **NEVER DELETE** original Voice Memo recordings.
+- Move working files to `inbox/archive/` instead of deleting them. This preserves the history in case the user needs to refer back to the intermediate processing steps.
+- Preserve original Voice Memo recordings to ensure no source audio is ever lost.
 - This pipeline is separate from `/process-transcripts`. Both can coexist.
