@@ -1,6 +1,6 @@
 ---
 name: process-voicememos
-description: "Make sure to use this skill whenever the user asks to process transcribed voice memos, extract summaries, tasks, or follow-ups from them. Trigger this to prepare meetings for review."
+description: Make sure to use this skill whenever the user asks to process transcribed voice memos, extract summaries, tasks, or follow-ups from them. Also trigger when there are files in inbox/transcribed/ that need processing, or when the user says "what's ready to process" after transcription completes.
 ---
 
 # /process-voicememos - Process Transcribed Voice Memos

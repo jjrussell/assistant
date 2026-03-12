@@ -12,8 +12,7 @@ argument-hint: "[today|this week|next week] (optional, defaults to today)"
    - Reading each project file
    - Extracting tasks from each project's task table due today or overdue
 3. **Pull follow-ups** from `areas/followups.md` due today or overdue
-4. **Pull from third-party todo apps** available through MCP servers
-5. **Mention any goals** with imminent milestones from `areas/goals.md`
+4. **Mention any goals** with imminent milestones from `areas/goals.md`
 6. **Present consolidated view:**
    ```
    ## Tasks Due Today

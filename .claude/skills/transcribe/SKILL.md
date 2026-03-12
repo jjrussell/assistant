@@ -1,6 +1,6 @@
 ---
 name: transcribe
-description: "Make sure to use this skill whenever the user asks to \"transcribe\", \"transcribe my meetings\", or \"transcribe voice memos\". Use this skill to securely launch local transcription in the background on Apple Silicon."
+description: Make sure to use this skill whenever the user asks to transcribe, transcribe meetings, or transcribe voice memos. Use this skill to securely launch local transcription in the background on Apple Silicon.
 ---
 
 # /transcribe - Transcribe Voice Memos

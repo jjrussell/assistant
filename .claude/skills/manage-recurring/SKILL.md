@@ -1,6 +1,6 @@
 ---
 name: manage-recurring
-description: Make sure to use this skill whenever the user discusses ongoing responsibilities, items that repeat on a schedule, or asks about recurring tasks, even if they don't explicitly ask to "manage recurring items". Use it to create, update, and track these items.
+description: Make sure to use this skill whenever the user discusses ongoing responsibilities, items that repeat on a schedule, or asks about recurring tasks, even if they don't explicitly ask to "manage recurring items". Also trigger for "I have this every two weeks", "remind me about X monthly", "what's my regular cadence", or any mention of something happening on a repeating schedule. Use it to create, update, and track these items.
 ---
 
 ## Recurring Items

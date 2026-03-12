@@ -1,6 +1,6 @@
 ---
 name: review-voicememos
-description: "Make sure to use this skill whenever the user asks to review voice memos or processed meetings. Use this to confirm or edit summaries and save them to work memory."
+description: Make sure to use this skill whenever the user asks to review voice memos or processed meetings. Also trigger when the user says "what meetings are ready", "anything to review", asks about the voice memo pipeline status, or when inbox/reviews/ has pending files. Use this to confirm or edit summaries and save them to work memory.
 ---
 
 # /review-voicememos - Review Processed Voice Memo Meetings

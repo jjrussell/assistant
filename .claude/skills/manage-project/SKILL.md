@@ -18,6 +18,40 @@ A project has an objective, background context, key people, a task list, and a n
 - It has a clear "done" state and deadline (not an ongoing responsibility — that would be an Area)
 - There's enough complexity that context would be lost without a dedicated place to track it
 
+## Project file structure
+
+Every project file should have these sections. The goal is that someone (or a future session) can read the file cold and understand what this project is, why it matters, where things stand, and what happens next.
+
+```markdown
+# Project Name
+
+**Objective:** One sentence — what does "done" look like?
+**Why it matters:** Why this exists. What happens if it doesn't get done?
+**Due:** Target date or timeframe
+**Current situation:** 2-3 sentences on where things stand right now. Updated regularly.
+
+## Key People
+
+| Role | Person | Notes |
+|------|--------|-------|
+| Owner | [Name](path) | Why they're involved |
+| Stakeholder | [Name](path) | Their interest or responsibility |
+
+## Tasks
+
+| Due Date | Task | Owner | Status | Context |
+|----------|------|-------|--------|---------|
+| YYYY-MM-DD | Specific action | Person | pending/done | Why this matters or what it unblocks |
+
+**Next action:** The single most important thing that needs to happen next.
+```
+
+Key principles:
+- "Current situation" is the most frequently updated section — keep it fresh
+- Tasks live here (not in `areas/tasks.md`) because they're project-scoped
+- "Next action" forces clarity on what's actually blocking progress
+- Key People should include anyone whose actions affect the project, with enough context that you'd know why to contact them
+
 ## When a project is mentioned:
 
 1. **Check if it exists** in `projects/` by using Glob to find `projects/*/` directories

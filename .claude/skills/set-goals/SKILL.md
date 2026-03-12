@@ -1,6 +1,6 @@
 ---
 name: set-goals
-description: Make sure to use this skill whenever the user asks about goals, wants to set new goals, review progress, or asks "how are we tracking on [goal]?". Trigger this skill for any goal-related discussion.
+description: Make sure to use this skill whenever the user asks about goals, wants to set new goals, review progress, or asks "how are we tracking on [goal]?". Trigger this skill for any goal-related discussion, including OKRs, quarterly planning, "what should I focus on", or priority-setting conversations.
 ---
 
 ## Goal Setting
@@ -13,7 +13,21 @@ When goals need to be established or revisited:
    - What does "done" look like? What's the measurable outcome?
    - What are the key milestones or checkpoints?
    - What could get in the way?
-3. **Challenge vagueness:** "Do the thing" isn't a goal. Specific, measurable outcomes are.
+3. **Challenge vagueness:** Push back on goals that can't be assessed. The test: could someone look at this goal in 3 months and clearly say "done" or "not done"?
+
+**Example — vague vs. specific:**
+
+Vague: "Improve team culture"
+Better: "Every TL has a documented development plan by end of Q1, and I've had at least one coaching conversation per direct report per month"
+
+Vague: "Ship the new API project"
+Better: "Third-party webhook events flowing through the new pipeline in private beta by end of Q2. Key milestone: Platform team and Partner team aligned on API contract by March 15."
+
+Vague: "Get Jamie promoted"
+Better: "Jamie → Staff promotion in Fall 2026 cycle. Start doc in August, finish mid-September. Three stories to collect: reliability initiative, cross-team data migration, mentorship of junior engineers."
+
+The difference: specific goals name the outcome, the timeline, and the evidence. They give you something to track against rather than a vague aspiration.
+
 4. **Suggest prioritization:** If there are too many goals, push back. What's the #1?
 5. **Confirm before saving:** Read back the goals and get explicit approval before updating `areas/goals.md`
 

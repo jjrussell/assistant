@@ -1,9 +1,22 @@
 {
+  "permissions": {
+    "allow": [
+      "Edit",
+      "Write",
+      "Read",
+      "Bash(mkdir:*)",
+      "Bash(mkdir -p:*)",
+      "Bash(mv:*)",
+      "Bash(ls:*)",
+      "Bash(cp:*)"
+    ]
+  },
   "mcpServers": {
     "todoist": {
       "url": "https://ai.todoist.net/mcp",
       "type": "http",
       "trust": true
     }
-  }
+  },
+  "experimental": { "enableAgents": true }
 }
