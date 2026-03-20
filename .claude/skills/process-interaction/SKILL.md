@@ -26,7 +26,9 @@ Today's date: {date}
 3. If there are multiple files, spawn subagents in parallel (one per file) using background mode
 4. As each subagent completes, collect its structured summary
 5. Present each summary to the user following logging mode behavior (see below)
-6. **Move transcripts immediately after presenting each summary.** Don't wait for flag resolution — move as soon as you present the summary, unless the `FILED TO:` destination itself is flagged as ambiguous. Use `mkdir -p` to ensure the destination directory exists, then `mv` the inbox file. For duplicates, delete the inbox file (`rm`) since the original is already filed.
+6. **Move transcripts immediately after presenting each summary.** Don't wait for flag resolution — move as soon as you present the summary, unless the `FILED TO:` destination itself is flagged as ambiguous. Use `scripts/move-transcript.sh` to move or delete files:
+   - Move: `./.claude/skills/process-interaction/scripts/move-transcript.sh move <source> <dest-dir>`
+   - Delete (duplicates): `./.claude/skills/process-interaction/scripts/move-transcript.sh delete <source>`
 
 **For filing ambiguities** (subagent flagged destination as uncertain): present to the user and wait for a response before moving.
 

@@ -4,11 +4,13 @@
       "Edit",
       "Write",
       "Read",
-      "Bash(mkdir:*)",
-      "Bash(mkdir -p:*)",
-      "Bash(mv:*)",
-      "Bash(ls:*)",
-      "Bash(cp:*)"
+      "Bash",
+      "WebSearch",
+      "WebFetch",
+      "mcp__todoist__find-tasks-by-date",
+      "mcp__todoist__find-projects",
+      "mcp__todoist__get-overview",
+      "mcp__todoist__find-tasks"
     ]
   },
   "mcpServers": {

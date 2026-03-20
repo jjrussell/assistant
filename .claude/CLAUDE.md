@@ -107,7 +107,10 @@ When you're asked to think through something - set goals, plan something, reflec
 | `areas/followups.md` | Things others committed to that you're tracking |
 | `areas/tasks.md` | General tasks you committed to (not project-specific) |
 | `areas/recruiting.md` | Consolidated recruiting tracker: open roles, active candidates, recently hired, position IDs |
+| `areas/architecture/architecture.md` | Cross-cutting technical architecture decisions and how systems relate to each other |
+| `areas/architecture/transcripts/` | Raw transcripts from cross-cutting architecture meetings |
 | `areas/leadership-notes/` | Management playbooks, templates, and reference notes |
+| `areas/system/decisions.md` | Meta decisions about this assistant system's architecture and tooling |
 
 ### Archive (inactive items)
 | Path | Purpose |
@@ -242,6 +245,7 @@ If you write "Jane Smith" in a file and `areas/people/jane-smith/jane-smith.md` 
 - **Push for specificity in goals** - vague goals are useless
 - **Keep files clean** - when tasks or follow-ups are marked complete, immediately move them to `archive/completed.md` so active files only contain open items
 - **When uncertain, ask** - especially about dates, priority, intent, or where something should be organized
+- **Make items actionable** - When presenting tasks, follow-ups, or action items in any skill, provide a concrete next step whenever possible. Draft a Slack message, link to the relevant document or conversation, suggest specific wording for a response, or provide a link to the person's Slack profile. The goal is to reduce friction — seeing "Message Alex about the API review" is less useful than seeing the draft message ready to send. Use available tools (Slack search, Glean, person file contact info) to gather what's needed. If no actionable step can be determined, the item is fine as-is — don't force it.
 
 ---
 
