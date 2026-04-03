@@ -14,6 +14,9 @@ outbox/
 # Environment secrets
 .env
 
+# Obsidian (local editor config)
+.obsidian/
+
 # macOS
 .DS_Store
 
