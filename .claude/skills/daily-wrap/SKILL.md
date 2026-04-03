@@ -11,7 +11,14 @@ Target: 5 minutes of the user's time. Fast, focused, no fluff.
 
 ## Before starting
 
-Gather today's context. Do this in parallel:
+**Step 0: Process any open plate file.** Check `outbox/` for a `plate-*.md` file. If one exists, process it first — the user may have checked off items and added notes throughout the day that haven't been synced back to the source files yet. Follow the same processing logic as `/whats-on-my-plate` Step 0:
+- Checked items (`- [x]`): mark complete in source files (tasks.md, followups.md, project files) and move to `archive/completed.md`
+- User-added notes (text below items, modified items): incorporate into relevant files (person files, project files, etc.)
+- User-added unchecked items (`- [ ]`): create in the appropriate source file
+- Delete the plate file after processing
+- Briefly tell the user what you processed: "Processed today's plate: marked N items complete, incorporated notes on X."
+
+**Then gather today's context.** Do this in parallel:
 
 - `areas/tasks.md` — tasks due today or overdue
 - All `projects/*/` files — project-specific tasks due today or overdue

@@ -11,9 +11,16 @@ Target: 10-15 minutes of the user's time. Come prepared with data so they're rea
 
 ## Before starting
 
-**Step 1: Run housekeeping first.** Offer to run `/weekly-housekeeping` before the review begins. The review should be built on clean, current data — stale tasks and cluttered files undermine the planning step. If the user declines, proceed anyway.
+**Step 1: Process any open plate file.** Check `outbox/` for a `plate-*.md` file. If one exists, process it before doing anything else — the user may have checked off items and added notes throughout the day that haven't been synced back to the source files yet. Follow the same processing logic as `/whats-on-my-plate` Step 0:
+- Checked items (`- [x]`): mark complete in source files (tasks.md, followups.md, project files) and move to `archive/completed.md`
+- User-added notes (text below items, modified items): incorporate into relevant files (person files, project files, etc.)
+- User-added unchecked items (`- [ ]`): create in the appropriate source file
+- Delete the plate file after processing
+- Briefly tell the user what you processed: "Processed today's plate: marked N items complete, incorporated notes on X."
 
-**Step 2: Gather context.** Do this in parallel — read everything, then synthesize.
+**Step 2: Run housekeeping.** Offer to run `/weekly-housekeeping` before the review begins. The review should be built on clean, current data — stale tasks and cluttered files undermine the planning step. If the user declines, proceed anyway.
+
+**Step 3: Gather context.** Do this in parallel — read everything, then synthesize.
 
 - `areas/interactions.md` — this week's rows (filter by date)
 - `areas/tasks.md` — tasks due this week (completed and overdue)

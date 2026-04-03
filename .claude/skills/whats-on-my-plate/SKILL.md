@@ -51,46 +51,84 @@ The goal is to leave a **thread to pull** on every task -- a link, a draft messa
 - **Person context** - pull from their person file (Slack handle, recent observations) to inform drafts
 - If the item is self-contained (e.g., "write the design doc") and has no links in the source, no extra context needed - don't force it
 
+### Step 2.5: Group items by project
+
+After gathering and enriching all items, determine which items cluster around a project:
+
+1. **Identify project-related items** across all sources (tasks, follow-ups, recurring, goals). An item belongs to a project if:
+   - It came from a project file's task table
+   - Its context references a project name, key people, or workstream that maps to an active project
+   - A follow-up is clearly about a project deliverable (e.g., "Davis -- Share Sprint 2 epic-level breakdown" belongs to the Unified Builder project)
+2. **Group items that share a project.** A project group is worth creating when **2+ items** (across tasks, follow-ups, or goals) relate to the same project. Don't force single items into a project group.
+3. **Keep ungrouped items** in their general sections (General Tasks, General Follow-ups, etc.)
+
 ### Step 3: Write the output file
 
 Write the consolidated view to `outbox/plate-YYYY-MM-DD.md` (using today's date). Any existing plate file will have already been processed and removed in Step 0.
 
 **Use Obsidian-compatible checkboxes** (`- [ ]`) so the user can check items off during the day. Nest supporting context under each checkbox as indented body text (not as sub-checkboxes).
 
+**Structure: project-grouped first, then ungrouped items.**
+
+Items that cluster around a project go into a project section with tasks, follow-ups, and goal status together. Items that don't belong to any project go into General sections at the end. This keeps related work together so the user can think about one initiative at a time.
+
 **File format:**
 
 ```markdown
 # What's on my plate - YYYY-MM-DD
 
-## Tasks
+## [Project Name]
+> One-line project status or goal context
 
-### General
+**Tasks:**
 - [ ] **Task description** (due: date | overdue from: date)
   Context or background for this task.
+  → [Actionable next step or link]
+
+**Waiting on:**
+- [ ] **What** - waiting on [Person](path) (due: date)
+  → Draft nudge: "Hey @handle, following up on [thing] - any update?"
+
+**Goal:** [status or upcoming milestone for this project's goal]
+
+---
+
+## [Another Project Name]
+> One-line project status
+
+**Tasks:**
+- [ ] ...
+
+**Waiting on:**
+- [ ] ...
+
+---
+
+## General
+
+**Tasks:**
+- [ ] **Task description** (due: date | overdue from: date)
+  Context or background.
   → Draft message: "Hey @person, ..."
   → [Link to relevant doc/thread](url)
 
-### Project: [Project Name]
-- [ ] **Task description** (owner: person | due: date)
-  → [Actionable next step or link]
-
-## Follow-ups (waiting on others)
+**Waiting on:**
 - [ ] **What** - waiting on [Person](path) (due: date)
-  Last discussed: [link to Slack thread or date of last nudge]
-  → Draft nudge: "Hey @handle, following up on [thing] - any update?"
-  Nudge history: [if applicable, list prior nudge dates]
+  → Draft nudge: "Hey @handle, ..."
 
-## Recurring
+**Recurring:**
 - [ ] **Item** (due: date | frequency)
   Prep needed: [what prep is required]
 
-## Goals check-in
+**Goals:**
 - **Goal name**: [status or upcoming milestone]
 
 ---
 
 *Check items off as you complete them during the day. At EOD, ask Claude to process this file to update tasks, follow-ups, and interactions.*
 ```
+
+**Urgency ordering within each section:** Within each project group and within General, order items by urgency: overdue first (oldest first), then due today, then upcoming. Use subheadings like `### Overdue` and `### Due Today` only in the General section if there are many ungrouped items; within project groups, just order by urgency without subheadings to keep things compact.
 
 ### Step 4: Confirm to the user
 
@@ -111,5 +149,6 @@ If $ARGUMENTS includes "week" or "next week":
 4. **Any scheduled milestones** from `areas/goals.md`
 5. **Flag if prep is overdue or coming due** for recurring items
 6. **Flag anything** that looks at risk
-7. **Write to `outbox/plate-YYYY-MM-DD.md`** using the same checkbox format, grouped by day
-8. **Enrich each item** with the same actionable context as the daily view
+7. **Group by project** using the same logic as Step 2.5 (2+ related items = project group, rest goes to General)
+8. **Write to `outbox/plate-YYYY-MM-DD.md`** using the same project-grouped checkbox format, with days as sub-groupings within each project section
+9. **Enrich each item** with the same actionable context as the daily view
