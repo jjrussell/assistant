@@ -68,6 +68,8 @@ Write the consolidated view to `outbox/plate-YYYY-MM-DD.md` (using today's date)
 
 **Use Obsidian-compatible checkboxes** (`- [ ]`) so the user can check items off during the day. Nest supporting context under each checkbox as indented body text (not as sub-checkboxes).
 
+**Project headers must link to the project file.** Every `## Project Name` header must be a markdown link to the project's main file (e.g., `## [ACR 2026](../projects/acr-2026/acr-2026.md)`). Use relative paths from the `outbox/` directory.
+
 **Structure: project-grouped first, then ungrouped items.**
 
 Items that cluster around a project go into a project section with tasks, follow-ups, and goal status together. Items that don't belong to any project go into General sections at the end. This keeps related work together so the user can think about one initiative at a time.
@@ -77,7 +79,7 @@ Items that cluster around a project go into a project section with tasks, follow
 ```markdown
 # What's on my plate - YYYY-MM-DD
 
-## [Project Name]
+## [Project Name](relative/path/to/project-file.md)
 > One-line project status or goal context
 
 **Tasks:**
@@ -93,7 +95,7 @@ Items that cluster around a project go into a project section with tasks, follow
 
 ---
 
-## [Another Project Name]
+## [Another Project Name](relative/path/to/project-file.md)
 > One-line project status
 
 **Tasks:**
