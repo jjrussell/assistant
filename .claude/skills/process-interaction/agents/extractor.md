@@ -29,10 +29,12 @@ Evidence, strongest first:
 - **Role and content:** What someone owns or talks about, checked against their person file (the PM talks about copy and timelines, the person who owns a feature gives its status).
 
 Then:
-1. Fill `## Speaker guesses` with one line per speaker: `- Speaker 3 → Davis Mastin (high): addressed by name at 04:12, discusses the migration timeline he owns`. Confidence is `high`, `medium`, or `low`. Use `unknown` when there is no real evidence. Don't force a guess.
-2. In the `## Transcript` section, replace each label with the guess: `Davis Mastin:` for high confidence, `Davis Mastin?:` for medium or low, and leave `Speaker N:` for unknown. The `## Speakers` section stays as is so the original labels can be recovered.
+1. Replace the `(not yet guessed)` placeholder in `## Speaker guesses` with one line per speaker: `- Speaker 3 → Davis Mastin (high): addressed by name at 04:12, discusses the migration timeline he owns`. Confidence is `high`, `medium`, or `low`. Use `unknown` when there is no real evidence. Don't force a guess. Note diarization problems (one person split across speakers, two people merged into one) on a final `- Notes:` line.
+2. In the `## Transcript` section, replace each label with the guess: `John:` for John, full names for everyone else (`Davis Mastin:`), a trailing `?` for medium or low confidence (`Davis Mastin?:`), and leave `Speaker N:` for unknown. The `## Speakers` section stays as is so the original labels can be recovered. Replace labels with a script matching the exact `] Speaker N:` pattern, not by hand.
 3. Use the guessed identities for the rest of extraction, but don't attribute commitments or observations to a person on a low-confidence guess. Flag those instead.
-4. Include the mapping in your summary under `SPEAKERS:`.
+4. Turn boundaries are often off by a word or two, so the end of one person's sentence can land at the start of the next turn. Don't attribute quotes or commitments based on 1–3 word fragments at turn edges; read the surrounding turns.
+5. The `## Superwhisper summary` comes from a small local model and is often wrong about who owns what, and about numbers and dates. Use it for orientation only. When it disagrees with the transcript, trust the transcript.
+6. Include the mapping in your summary under `SPEAKERS:`.
 
 ## Extract
 
