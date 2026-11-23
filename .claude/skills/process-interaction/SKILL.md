@@ -9,6 +9,8 @@ This skill has two paths depending on where the input comes from. The key design
 
 ## Path A: File-based input (inbox/transcripts/)
 
+First run `scripts/import-superwhisper.py` to pull any new Superwhisper meeting recordings into `inbox/transcripts/`. It skips dictation, interviews, and recordings that were already imported.
+
 For each file in `inbox/transcripts/`, spawn a subagent using the Agent tool:
 
 1. Read `agents/extractor.md` from this skill's directory
@@ -76,6 +78,7 @@ Follow **logging mode**:
 
 `context.md` in this skill directory contains meeting type patterns and filing rules specific to the work environment. The subagent reads it directly. For Path B, read it yourself if the interaction matches a recurring meeting type.
 
-## Script location
+## Scripts
 
-`scripts/save-transcript.sh` — reads clipboard, saves to `inbox/transcripts/YYYY-MM-DD-HHMMSS.txt`.
+- `scripts/save-transcript.sh` — reads clipboard, saves to `inbox/transcripts/YYYY-MM-DD-HHMMSS.txt`
+- `scripts/import-superwhisper.py` — imports Superwhisper meetings to `inbox/transcripts/YYYY-MM-DD-HHMM-<title>.txt`. Use `--dry-run` to preview.

@@ -16,6 +16,23 @@ You are processing a single interaction file and filing it into a memory system.
 - **Pasted Slack conversation** (multi-line with usernames, timestamps, emoji reactions, `:emoji:` markers, but NOT a single URL): Process directly. Use `slack-` prefix in filenames. Note "Pasted from Slack" in historical-notes.
 - **Meeting transcript** (multi-line dialogue): Process directly.
 - **Other URL** (Google Doc, etc.): Fetch via Glean with appropriate datasource. Append description to file.
+- **Superwhisper meeting** (header contains `Superwhisper ID:`): Imported by `scripts/import-superwhisper.py`. Guess speakers first (below), then process as a meeting transcript.
+
+## Guess speakers (Superwhisper transcripts only)
+
+Superwhisper labels speakers generically (`Speaker 1`, `Speaker 2`, ...). Before extracting, work out who each speaker probably is and write it into the file. This is the one exception to "do not modify the inbox file": you may edit the `## Speaker guesses` section and the speaker labels, nothing else.
+
+Evidence, strongest first:
+- **Direct address and self-reference:** "Thanks, Davis", "Vishal, can you...", "this is Emma", someone answering right after being named.
+- **Channel:** `John's mic` speakers are usually John. Diarization often splits one person into several speakers, so several mic speakers can all be John. If the meeting looks in-person (a room in attendees, people talking over each other on the mic), mic speakers may be other people in the room. `call audio` speakers are never John.
+- **Attendees:** The calendar list limits who can be on the call (people can still join uninvited). Usernames without a name can be matched to people files (e.g. `dmastin` → Davis Mastin).
+- **Role and content:** What someone owns or talks about, checked against their person file (the PM talks about copy and timelines, the person who owns a feature gives its status).
+
+Then:
+1. Fill `## Speaker guesses` with one line per speaker: `- Speaker 3 → Davis Mastin (high): addressed by name at 04:12, discusses the migration timeline he owns`. Confidence is `high`, `medium`, or `low`. Use `unknown` when there is no real evidence. Don't force a guess.
+2. In the `## Transcript` section, replace each label with the guess: `Davis Mastin:` for high confidence, `Davis Mastin?:` for medium or low, and leave `Speaker N:` for unknown. The `## Speakers` section stays as is so the original labels can be recovered.
+3. Use the guessed identities for the rest of extraction, but don't attribute commitments or observations to a person on a low-confidence guess. Flag those instead.
+4. Include the mapping in your summary under `SPEAKERS:`.
 
 ## Extract
 
@@ -115,6 +132,7 @@ PROCESSED: [filename]
 TYPE: [1:1 / project meeting / slack thread / etc.]
 DATE: [YYYY-MM-DD]
 PEOPLE: [list]
+SPEAKERS: [Superwhisper only: Speaker N → Name (confidence), ...]
 FILED TO: [destination path]
 
 EXTRACTED:
