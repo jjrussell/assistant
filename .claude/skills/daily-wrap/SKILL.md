@@ -18,6 +18,11 @@ Target: 5 minutes of the user's time. Fast, focused, no fluff.
 - Delete the plate file after processing
 - Briefly tell the user what you processed: "Processed today's plate: marked N items complete, incorporated notes on X."
 
+**Step 1: Import and process today's meetings.** Run `scripts/import-superwhisper.py` to pull new Superwhisper meeting recordings into `inbox/transcripts/`. If anything is in the inbox, process it with the process-interaction skill (Path A) before gathering context, so tasks and follow-ups from today's meetings show up in the wrap. Keep it fast:
+- Give one short summary per meeting: who (with speaker guesses), where it was filed, and what was extracted. Don't walk through the full extraction.
+- Batch the flags (new people, ambiguous filing, low-confidence speakers) into a single list the user can answer in one reply.
+- If more than ~5 files are waiting, it's a backlog, not today's meetings. Say how many and ask whether to process them now or in a separate session, rather than turning the wrap into a long session.
+
 **Then gather today's context.** Do this in parallel:
 
 - `areas/tasks.md` — tasks due today or overdue
